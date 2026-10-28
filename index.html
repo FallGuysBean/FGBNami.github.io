@@ -1,1 +1,518 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMI Southern Nevada | Mental Health Support</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f5fc;
+            color: #292443;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            color: #5b3c91;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #39304f;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #8b65c6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 8%;
+            background: linear-gradient(135deg, #e9e0f7, #f5efff);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #4b337b;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #5c5470;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #6846a5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #4b337b;
+        }
+
+        .hero-image {
+            font-size: 120px;
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(91,60,145,0.1);
+        }
+
+        /* General Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #4b337b;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #716983;
+        }
+
+        /* Purpose */
+        .purpose {
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .purpose-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .purpose-content p {
+            font-size: 18px;
+            color: #5c5470;
+        }
+
+        /* Efforts */
+        .efforts {
+            background-color: #f7f5fc;
+        }
+
+        .effort-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .effort-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+
+        .effort-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .effort-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .effort-card h3 {
+            color: #5b3c91;
+            margin-bottom: 10px;
+        }
+
+        .effort-card p {
+            color: #716983;
+        }
+
+        /* Community */
+        .community {
+            background-color: #e9e0f7;
+            text-align: center;
+        }
+
+        .community p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #5c5470;
+            font-size: 17px;
+        }
+
+        /* Social Media */
+        .social {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #5b3c91;
+            background-color: #f1ebfa;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #6846a5;
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34254f;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 8%;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #ddd5ed;
+        }
+
+        footer a {
+            color: #d6c5f5;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .effort-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .effort-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+
+            .hero-image {
+                font-size: 80px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">NAMI Southern Nevada</div>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#efforts">Our Efforts</a>
+            <a href="#community">Community</a>
+            <a href="#social">Social Media</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>You Are Not Alone.</h1>
+
+            <p>
+                Building a stronger Southern Nevada through mental
+                health awareness, education, advocacy, and support.
+                Everyone deserves to feel heard, understood, and valued.
+            </p>
+
+            <a href="#about" class="button">Learn About Our Mission</a>
+        </div>
+
+        <div class="hero-image">
+            💜
+        </div>
+    </section>
+
+    <!-- Purpose Section -->
+    <section class="purpose" id="about">
+        <div class="purpose-content">
+            <div class="section-title">
+                <h2>Our Purpose</h2>
+                <p>Creating a community where mental health matters.</p>
+            </div>
+
+            <p>
+                NAMI Southern Nevada is dedicated to improving the
+                lives of individuals and families affected by mental
+                illness. Through free support, education, and advocacy,
+                NAMI works to reduce stigma and create a compassionate
+                community where people can find hope and understanding.
+            </p>
+        </div>
+    </section>
+
+    <!-- Efforts Section -->
+    <section class="efforts" id="efforts">
+        <div class="section-title">
+            <h2>Our Community Efforts</h2>
+
+            <p>
+                Working together to make mental health support
+                accessible to everyone.
+            </p>
+        </div>
+
+        <div class="effort-grid">
+
+            <div class="effort-card">
+                <div class="icon">🤝</div>
+
+                <h3>Peer Support</h3>
+
+                <p>
+                    Providing support groups where individuals and
+                    families can connect, share experiences, and
+                    find understanding.
+                </p>
+            </div>
+
+            <div class="effort-card">
+                <div class="icon">📚</div>
+
+                <h3>Mental Health Education</h3>
+
+                <p>
+                    Offering free educational programs that help
+                    people understand mental illness, recovery,
+                    and how to support loved ones.
+                </p>
+            </div>
+
+            <div class="effort-card">
+                <div class="icon">📢</div>
+
+                <h3>Advocacy</h3>
+
+                <p>
+                    Raising awareness, challenging stigma, and
+                    advocating for better mental health services
+                    and policies.
+                </p>
+            </div>
+
+            <div class="effort-card">
+                <div class="icon">🌱</div>
+
+                <h3>Youth Mental Health</h3>
+
+                <p>
+                    Supporting young people through mental health
+                    awareness presentations, youth support groups,
+                    and community resources.
+                </p>
+            </div>
+
+            <div class="effort-card">
+                <div class="icon">🏘️</div>
+
+                <h3>Community Outreach</h3>
+
+                <p>
+                    Connecting with schools, families, organizations,
+                    and local communities to spread awareness
+                    and encourage understanding.
+                </p>
+            </div>
+
+            <div class="effort-card">
+                <div class="icon">💜</div>
+
+                <h3>Hope and Recovery</h3>
+
+                <p>
+                    Encouraging recovery, promoting wellness,
+                    and reminding individuals that their
+                    experiences matter.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <div class="section-title">
+            <h2>Be Part of the Change</h2>
+        </div>
+
+        <p>
+            Mental health affects everyone. By volunteering,
+            participating in community events, sharing resources,
+            and supporting mental health awareness, we can help
+            create a more inclusive and understanding Southern Nevada.
+        </p>
+
+        <a
+            href="https://namisouthernnevada.org/get-involved/"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Get Involved
+        </a>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social" id="social">
+        <div class="section-title">
+            <h2>Connect With Us</h2>
+
+            <p>
+                Follow NAMI Southern Nevada to stay informed,
+                learn about events, and spread mental health awareness.
+            </p>
+        </div>
+
+        <div class="social-links">
+
+            <a
+                href="https://www.facebook.com/NAMISouthernNevada/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Facebook
+            </a>
+
+            <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>NAMI Southern Nevada</h3>
+
+        <p>
+            Support. Education. Advocacy.
+        </p>
+
+        <p>
+            Building a community where no one struggles alone.
+        </p>
+
+        <p>
+            <a
+                href="https://namisouthernnevada.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit the Official NAMI Southern Nevada Website
+            </a>
+        </p>
+
+        <p>
+            &copy; 2026 NAMI Southern Nevada Support Website
+        </p>
+    </footer>
+
+</body>
+</html>
